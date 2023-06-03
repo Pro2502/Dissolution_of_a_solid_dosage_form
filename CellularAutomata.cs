@@ -292,7 +292,7 @@ namespace Dissolution_of_a_solid_dosage_form
                 equality = true;
             }
 
-            if (equality)
+            if (equality || CurrentGeneration >= 3000)
             {
                 Console.WriteLine("The total time for the dissolution of Arogel:" + CurrentGeneration);
                 no_end = false;

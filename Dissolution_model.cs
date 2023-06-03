@@ -36,8 +36,9 @@ namespace Dissolution_of_a_solid_dosage_form
             k= (double)nud_k.Value;
             cellularAutomata = new CellularAutomata();
             cellularAutomata.Initialisation(pictProcess.Height / resolution, pictProcess.Width / resolution, pictProcess.Height / (2*resolution) , pictProcess.Width / (2 * resolution), maxConc, sat_solution);
-
-            
+            // Инициализируем канву сразу
+            pictProcess.Image = new Bitmap(pictProcess.Width, pictProcess.Height);
+            graphics = Graphics.FromImage(pictProcess.Image);
             bool can_update = true;
             while (no_end)
             {
@@ -51,7 +52,8 @@ namespace Dissolution_of_a_solid_dosage_form
 
                         cellularAutomata.quantityCurve.Add((int)cellularAutomata.quantity);
                         cellularAutomata.Iteration_Count(ref no_end, pictProcess.Height / (2 * resolution), pictProcess.Width / (2 * resolution));
-              
+                        DrawNewGeneration();
+                        pictProcess.Refresh();
                     }
                     else
                     {
@@ -59,20 +61,20 @@ namespace Dissolution_of_a_solid_dosage_form
                     }
                 }
             }
-            pictProcess.Image = new Bitmap(pictProcess.Width, pictProcess.Height);
-            graphics = Graphics.FromImage(pictProcess.Image);
+            
 
             timerDisplay.Start();
         }
         private void DrawNewGeneration()
         {
             graphics.Clear(Color.Black);
-            if (!no_end)
+            // Зачем???
+            //if (!no_end)
             {
                 
-                for (int x = 0; x < pictProcess.Width; x++)
+                for (int x = 0; x < cellularAutomata.Field.GetLength(0); x++)
                 {
-                    for (int y = 0; y < pictProcess.Height; y++)
+                    for (int y = 0; y < cellularAutomata.Field.GetLength(1); y++)
                     {
                         if (cellularAutomata.Field[x, y].concentration >= sat_solution)
                         {
@@ -86,23 +88,31 @@ namespace Dissolution_of_a_solid_dosage_form
                                 graphics.FillEllipse(Brushes.Gray, x * resolution, y * resolution, resolution, resolution);
                             }
                         }
-
-                        else if (cellularAutomata.Field[x, y].concentration < sat_solution && cellularAutomata.Field[x, y].concentration > 0)//(int)(Field[x, y].saturated_solution * 0.1))
-                        {
-                            int MinC = (int)(sat_solution * 0.4);
-                            if (cellularAutomata.Field[x, y].concentration < MinC)
-                            {
-                                graphics.FillEllipse(Brushes.Green, x * resolution, y * resolution, resolution, resolution);
-                            }
-                            else
-                            {
-                                graphics.FillEllipse(Brushes.White, x * resolution, y * resolution, resolution, resolution);
-                            }
-                        }
                         else
                         {
-                            graphics.FillEllipse(Brushes.Blue, x * resolution, y * resolution, resolution, resolution);
-                        }
+                            int weight = (int)(255 * cellularAutomata.Field[x, y].concentration / sat_solution);
+                            int r = weight;
+                            int g = 0;
+                            int b = 255 - weight;
+                            Brush brush = new SolidBrush(Color.FromArgb(r, g, b));
+                            graphics.FillEllipse(brush, x * resolution, y * resolution, resolution, resolution);
+                        }    
+                        //else if (cellularAutomata.Field[x, y].concentration < sat_solution && cellularAutomata.Field[x, y].concentration > 0)//(int)(Field[x, y].saturated_solution * 0.1))
+                        //{
+                        //    int MinC = (int)(sat_solution * 0.4);
+                        //    if (cellularAutomata.Field[x, y].concentration < MinC)
+                        //    {
+                        //        graphics.FillEllipse(Brushes.Green, x * resolution, y * resolution, resolution, resolution);
+                        //    }
+                        //    else
+                        //    {
+                        //        graphics.FillEllipse(Brushes.White, x * resolution, y * resolution, resolution, resolution);
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    graphics.FillEllipse(Brushes.Blue, x * resolution, y * resolution, resolution, resolution);
+                        //}
                     }
                     Console.WriteLine();
                 }
