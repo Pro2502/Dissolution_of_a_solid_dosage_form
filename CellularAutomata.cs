@@ -10,8 +10,6 @@ namespace Dissolution_of_a_solid_dosage_form
     {
         public int CurrentGeneration { get; private set;}
         public Cells[,] Field;
-        private readonly int _rows;
-        private readonly int _cols;
         private Random _random = new Random();
         double D = 5;
         public Calculation[,] Field_for_calculation;
@@ -266,11 +264,11 @@ namespace Dissolution_of_a_solid_dosage_form
             CurrentGeneration++;
         }
         
-        public void Transformation()
+        public void Transformation(int rows, int cols)
         {
-            for (int i = 0; i < _rows; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < _cols; j++)
+                for (int j = 0; j < cols; j++)
                 {
 
                     Field[i, j].concentration = Field[i, j].concentration + Field_for_calculation[i, j].accumulation_concentration;

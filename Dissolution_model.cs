@@ -27,13 +27,13 @@ namespace Dissolution_of_a_solid_dosage_form
         {
             if (timerDisplay.Enabled)
                 return;
-            dom_Dt.Enabled = false;
-            dom_k.Enabled = false;
+            nud_Dt.Enabled = false;
+            nud_k.Enabled = false;
             resolution = (int)nudResol.Value;
             maxConc = (int)nudConc.Value;
             sat_solution = maxConc / 2;
-            Dt = Convert.ToDouble(dom_Dt.Text);
-            k= Convert.ToDouble(dom_k.Text);
+            Dt = (double)nud_Dt.Value; 
+            k= (double)nud_k.Value;
             cellularAutomata = new CellularAutomata();
             cellularAutomata.Initialisation(pictProcess.Height / resolution, pictProcess.Width / resolution, pictProcess.Height / (2*resolution) , pictProcess.Width / (2 * resolution), maxConc, sat_solution);
 
@@ -47,7 +47,7 @@ namespace Dissolution_of_a_solid_dosage_form
                     {
                         cellularAutomata.Transition_Rule_dissolution(k,sat_solution);
                         cellularAutomata.Transition_Rule_diffusion(Dt, sat_solution);
-                        cellularAutomata.Transformation();
+                        cellularAutomata.Transformation(pictProcess.Height / resolution, pictProcess.Width / resolution);
 
                         cellularAutomata.quantityCurve.Add((int)cellularAutomata.quantity);
                         cellularAutomata.Iteration_Count(ref no_end, pictProcess.Height / (2 * resolution), pictProcess.Width / (2 * resolution));
