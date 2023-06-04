@@ -1,0 +1,21 @@
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\bin\Debug\Dissolution of a solid dosage form.exe.config
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\bin\Debug\Dissolution of a solid dosage form.exe
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\bin\Debug\Dissolution of a solid dosage form.pdb
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\obj\Debug\Dissolution of a solid dosage form.csproj.AssemblyReference.cache
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\obj\Debug\Dissolution_of_a_solid_dosage_form.Properties.Resources.resources
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\obj\Debug\Dissolution of a solid dosage form.csproj.GenerateResource.cache
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\obj\Debug\Dissolution of a solid dosage form.csproj.CoreCompileInputs.cache
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\obj\Debug\Dissolution of a solid dosage form.exe
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\obj\Debug\Dissolution of a solid dosage form.pdb
+D:\Дипломная работа\Для диплома\Dissolution of a solid dosage form\obj\Debug\Dissolution_of_a_solid_dosage_form.Dissolution_model.resources
+C:\Users\Игорь\Source\Repos\Anya\bin\Debug\Dissolution of a solid dosage form.exe.config
+C:\Users\Игорь\Source\Repos\Anya\bin\Debug\Dissolution of a solid dosage form.exe
+C:\Users\Игорь\Source\Repos\Anya\bin\Debug\Dissolution of a solid dosage form.pdb
+C:\Users\Игорь\Source\Repos\Anya\obj\Debug\Dissolution of a solid dosage form.csproj.AssemblyReference.cache
+C:\Users\Игорь\Source\Repos\Anya\obj\Debug\Dissolution of a solid dosage form.csproj.SuggestedBindingRedirects.cache
+C:\Users\Игорь\Source\Repos\Anya\obj\Debug\Dissolution_of_a_solid_dosage_form.Dissolution_model.resources
+C:\Users\Игорь\Source\Repos\Anya\obj\Debug\Dissolution_of_a_solid_dosage_form.Properties.Resources.resources
+C:\Users\Игорь\Source\Repos\Anya\obj\Debug\Dissolution of a solid dosage form.csproj.GenerateResource.cache
+C:\Users\Игорь\Source\Repos\Anya\obj\Debug\Dissolution of a solid dosage form.csproj.CoreCompileInputs.cache
+C:\Users\Игорь\Source\Repos\Anya\obj\Debug\Dissolution of a solid dosage form.exe
+C:\Users\Игорь\Source\Repos\Anya\obj\Debug\Dissolution of a solid dosage form.pdb
